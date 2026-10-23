@@ -18,5 +18,5 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
-  base: '/react_phone-catalog/',
+  base: '/nice-gadgets/',
 });
