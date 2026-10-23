@@ -13,10 +13,10 @@ export default defineConfig({
       include: '**/*.svg?react',
     }),
   ],
+  base: '/nice-gadgets/',
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
     },
   },
-  base: '/nice-gadgets/',
 });

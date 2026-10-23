@@ -107,7 +107,7 @@
         border: 1px solid $color-primary;
       }
     }
-  /* stylelint-disable-next-line at-rule-empty-line-before */
+    /* stylelint-disable-next-line at-rule-empty-line-before */
   } @else {
     border: none;
   }
@@ -137,7 +137,7 @@
     @include on-desktop {
       padding-bottom: 80px;
     }
-  /* stylelint-disable-next-line at-rule-empty-line-before */
+    /* stylelint-disable-next-line at-rule-empty-line-before */
   } @else {
     padding-bottom: 0;
   }
@@ -157,7 +157,7 @@
   background: linear-gradient(
     90deg,
     $color-elements 25%,
-    $color-skeleton-highlight 50%, 
+    var(--color-hover-bg) 50%,
     $color-elements 75%
   );
   background-size: 200% 100%;
