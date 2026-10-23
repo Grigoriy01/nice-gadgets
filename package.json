@@ -42,18 +42,15 @@
     "vite-plugin-svgr": "^5.2.0"
   },
   "scripts": {
-    "start": "mate-scripts start -l",
-    "build": "mate-scripts build",
-    "style-format": "npx stylelint 'src/**/*.scss' --fix --allow-empty-input",
-    "lint-js": "mate-scripts lint -j",
-    "lint-css": "mate-scripts lint -s",
-    "format": "prettier --write './src/**/*.{ts,tsx}'",
-    "lint": "npm run style-format && npm run format && npm run lint-js && npm run lint-css",
-    "update": "mate-scripts update",
-    "postinstall": "npm run update && cypress verify",
-    "predeploy": "npm run build",
-    "deploy": "mate-scripts deploy"
-  },
+  "start": "vite",
+  "dev": "vite",
+  "build": "tsc && vite build",
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d dist",
+  "style-format": "npx stylelint 'src/**/*.scss' --fix --allow-empty-input",
+  "format": "prettier --write './src/**/*.{ts,tsx}'",
+  "lint": "npm run style-format && npm run format"
+},
   "browserslist": {
     "production": [
       ">0.2%",
