@@ -34,7 +34,6 @@
     height: 22px;
   }
 
-  // Подключаем правильную геометрию строк спецификаций
   &__specs {
     @include product-specs-base;
     @include divider;
