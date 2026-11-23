@@ -17,9 +17,11 @@ export const ImageWithFallback: React.FC<Props> = ({
     setHasError(false);
   }, [src]);
 
-  const isInvalid = !src || hasError;
+  if (!src) {
+    return null;
+  }
 
-  if (isInvalid && fallbackIcon) {
+  if (hasError && fallbackIcon) {
     return <div className={className}>{fallbackIcon}</div>;
   }
 

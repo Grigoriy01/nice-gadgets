@@ -36,7 +36,6 @@ export const ProductDetailsPage = () => {
   const { products, loadData } = useProducts();
   const {
     isInitialLoading,
-    isLoadingDetails,
     hasErrorDetails,
     product,
     loadData: loadDetailsData,
@@ -44,6 +43,7 @@ export const ProductDetailsPage = () => {
 
   const navigate = useNavigate();
   const [selectedImg, setSelectedImg] = useState('');
+  const activeImg = selectedImg || product?.images?.[0] || '';
 
   useEffect(() => {
     if (product?.images?.length) {
@@ -149,7 +149,7 @@ export const ProductDetailsPage = () => {
                     key={`${img}-${index}`}
                     type="button"
                     className={cn('product-details__thumb', {
-                      'product-details__thumb--active': selectedImg === img,
+                      'product-details__thumb--active': activeImg === img,
                     })}
                     onClick={() => setSelectedImg(img)}
                   >
@@ -172,8 +172,8 @@ export const ProductDetailsPage = () => {
                 <ImageWithFallback
                   className="product-details__main-image-content"
                   src={
-                    selectedImg
-                      ? `${import.meta.env.BASE_URL}${selectedImg}`
+                    activeImg
+                      ? `${import.meta.env.BASE_URL}${activeImg}`
                       : ''
                   }
                   alt={product?.name}
