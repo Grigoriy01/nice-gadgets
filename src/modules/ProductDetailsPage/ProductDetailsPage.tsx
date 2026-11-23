@@ -35,6 +35,7 @@ export const ProductDetailsPage = () => {
 
   const { products, loadData } = useProducts();
   const {
+    isInitialLoading,
     isLoadingDetails,
     hasErrorDetails,
     product,
@@ -118,12 +119,12 @@ export const ProductDetailsPage = () => {
       <div className="product-details container ">
         <div className="product-details__top-bar">
           <BreadcrumbsNav
-            isLoading={isLoadingDetails}
+            isLoading={isInitialLoading}
             productName={product?.name}
           />
           <ThemeToggle className="product-details__theme-btn" />
         </div>
-        {isLoadingDetails ? (
+        {isInitialLoading ? (
           <>
             <BackHeaderSkeleton className="product-details__header" />
             <ProductDetailsSkeleton />

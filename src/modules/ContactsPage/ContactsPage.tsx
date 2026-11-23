@@ -9,7 +9,7 @@ const CONTACT_LINKS = [
   {
     label: 'GitHub',
     value: 'Web-store "Nice Gadgets" ',
-    href: 'https://github.com/Grigoriy01/react_phone-catalog',
+    href: 'https://github.com/Grigoriy01/nice-gadgets',
     isExternal: true,
   },
   {

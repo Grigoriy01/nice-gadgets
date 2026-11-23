@@ -10,12 +10,41 @@ async function request<T>(url: string): Promise<T> {
   return (await response.json()) as T;
 }
 
-export function getProducts(): Promise<Product[]> {
-  return request<Product[]>(`${import.meta.env.BASE_URL}api/products.json`);
+const detailsCache = new Map<string, ProductDetails[]>();
+let productsCache: Promise<Product[]> | null = null;
+
+export async function getProducts(): Promise<Product[]> {
+  if (productsCache) {
+    return productsCache;
+  }
+
+  try {
+    productsCache = request<Product[]>(
+      `${import.meta.env.BASE_URL}api/products.json`,
+    );
+
+    return await productsCache;
+  } catch (error) {
+    productsCache = null;
+
+    throw error;
+  }
 }
 
-export function getProductDetails(category: string): Promise<ProductDetails[]> {
-  return request<ProductDetails[]>(
+export async function getProductDetails(
+  category: string,
+): Promise<ProductDetails[]> {
+  const cached = detailsCache.get(category);
+
+  if (cached) {
+    return cached;
+  }
+
+  const data = await request<ProductDetails[]>(
     `${import.meta.env.BASE_URL}api/${category}.json`,
   );
+
+  detailsCache.set(category, data);
+
+  return data;
 }

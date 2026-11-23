@@ -7,6 +7,8 @@ export function useProductDetails(productId?: string, category?: string) {
   const [isLoadingDetails, setIsLoadingDetails] = useState(true);
   const [hasErrorDetails, setHasErrorDetails] = useState(false);
 
+  const isInitialLoading = isLoadingDetails && !product;
+
   const loadData = useCallback(async () => {
     if (!productId || !category) {
       return;
@@ -37,6 +39,7 @@ export function useProductDetails(productId?: string, category?: string) {
 
   return {
     product,
+    isInitialLoading,
     isLoadingDetails,
     hasErrorDetails,
     loadData,
