@@ -50,7 +50,7 @@ export const ContactsPage: React.FC = () => {
                 className="contacts-page__avatar"
                 width={400}
                 height={400}
-                fetchPriority="high"
+                {...({ fetchpriority: 'high' } as React.ImgHTMLAttributes<HTMLImageElement>)}
               />
             </div>
           </div>
@@ -73,7 +73,7 @@ export const ContactsPage: React.FC = () => {
           <div className="contacts-page__links-grid">
             {CONTACT_LINKS.map(({ label, value, href, isExternal }) => (
               <a
-                key={label}
+                key={href}
                 href={href}
                 target={isExternal ? '_blank' : undefined}
                 rel="noopener noreferrer"
