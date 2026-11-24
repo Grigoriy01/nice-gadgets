@@ -1,6 +1,6 @@
 # Nice Gadgets Store 📱💻⌚
 
-Modern e-commerce web application for browsing and purchasing phones, tablets, and accessories.
+ Modern e-commerce web application for browsing and purchasing phones, tablets, and accessories.
 
 🔗 **[Live Demo](https://grigoriy01.github.io/nice-gadgets/)**
 
