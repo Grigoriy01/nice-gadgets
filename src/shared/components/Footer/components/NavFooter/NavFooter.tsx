@@ -8,7 +8,7 @@ export const NavFooter = () => {
       <ul className="nav-footer__list">
         <li className="nav-footer__item">
           <a
-            href="https://github.com/Grigoriy01/react_phone-catalog"
+            href="https://github.com/Grigoriy01/nice-gadgets.git"
             className="nav-footer__link"
             target="_blank"
             rel="noopener noreferrer"
