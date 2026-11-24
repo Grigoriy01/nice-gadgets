@@ -15,7 +15,19 @@ const CONTACT_LINKS = [
   {
     label: 'GitHub',
     value: 'mini-game "2048" ',
-    href: 'https://github.com/Grigoriy01/react_phone-catalog',
+    href: 'https://github.com/Grigoriy01/2048-game',
+    isExternal: true,
+  },
+  {
+    label: 'GitHub',
+    value: 'MyBike-landing" ',
+    href: 'https://github.com/Grigoriy01/mybike-landing',
+    isExternal: true,
+  },
+  {
+    label: 'GitHub',
+    value: 'Air Strategic Agency-landing" ',
+    href: 'https://github.com/Grigoriy01/myAir-landing',
     isExternal: true,
   },
   {
